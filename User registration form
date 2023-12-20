@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      max-width: 100%;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #output {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="registrationForm">
+    <label for="firstName">First Name</label>
+    <input type="text" id="first"name="Manda" required>
+
+    <label for="lastName">Last Name</label>
+    <input type="text" id="Venkaiah" name="lastName" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="Venkyvenkaiah789@gmail.com" name="email" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="Venky@123" name="password" required>
+
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="Venky@123" name="confirmPassword" required>
+
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="21-06-2004" name="dob" required>
+
+    <label>Gender</label>
+    <select id="gender" name="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label>
+      <input type="checkbox" id="termsCheckbox" required>
+      I agree to the Terms and Conditions
+    </label>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <div id="output"></div>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Check if the Terms and Conditions checkbox is checked
+      if (!document.getElementById('termsCheckbox').checked) {
+        alert('Please agree to the Terms and Conditions');
+        return;
+      }
+
+      // Display the form data as output
+      var outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = '<h2>Registration Details</h2>';
+      outputDiv.innerHTML += '<p><strong>First Name:</strong> ' + document.getElementById('firstName').value + '</p>';
+      outputDiv.innerHTML += '<p><strong>Last Name:</strong> ' + document.getElementById('lastName').value + '</p>';
+      outputDiv.innerHTML += '<p><strong>Email:</strong> ' + document.getElementById('email').value + '</p>';
+      outputDiv.innerHTML += '<p><strong>Date of Birth:</strong> ' + document.getElementById('dob').value + '</p>';
+      outputDiv.innerHTML += '<p><strong>Gender:</strong> ' + document.getElementById('gender').value + '</p>';
+    });
+  </script>
+
+</body>
+</html>
